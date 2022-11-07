@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 业务项目使用 fkh-company-parent 作为父依赖 -->
+    <parent>
+        <groupId>com.fkhwl</groupId>
+        <artifactId>fkh-company-parent</artifactId>
+        <version>2022.1.1-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>info.dong4j</groupId>
+    <artifactId>transactional</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <!-- 固定写法, 必须添加 fkh-company-dependencies, fkh-starter-dependencies, fkh-boot-dependencies -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fkhwl</groupId>
+                <artifactId>fkh-company-dependencies</artifactId>
+                <version>${fkh-company-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fkhwl</groupId>
+                <artifactId>fkh-element-dependencies</artifactId>
+                <version>${fkh-element-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fkhwl</groupId>
+                <artifactId>fkh-boot-dependencies</artifactId>
+                <version>${fkh-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 项目依赖 -->
+    <dependencies>
+        <dependency>
+            <groupId>com.fkhwl</groupId>
+            <artifactId>fkh-framework-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fkhwl</groupId>
+            <artifactId>fkh-mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- 必须添加 fkh-starter-test 单元测试组件 -->
+        <dependency>
+            <groupId>com.fkhwl</groupId>
+            <artifactId>fkh-element-test</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fkhwl</groupId>
+            <artifactId>fkh-element-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
